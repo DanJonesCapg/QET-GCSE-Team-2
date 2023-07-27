@@ -1,102 +1,222 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+<html style="font-size: 16px" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
     <title>Home</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Home.css" media="screen">
-    <meta name="generator" content="Nicepage 5.14.0, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono:400">
-    
+    <link rel="stylesheet" href="nicepage.css" media="screen" />
+    <link rel="stylesheet" href="Home.css" media="screen" />
+    <meta name="generator" content="Nicepage 5.14.0, nicepage.com" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
+    <link
+      id="u-page-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Cutive+Mono:400"
+    />
+
     <script>
-
-    //GET CALL
-    const options = { method: "GET" };
-    //Update the URL with the get details URL
-    fetch("http://18.207.173.95:8080/bank/"+localStorage.getItem("customerName"), options)
-    .then((response) => response.json())
-    .then((y) => {
-    console.log(y);
-    //update y.title to a parameter from the real URL
-    document.getElementById("loginname").innerHTML = y.customerName;
-    document.getElementById("currentaccountbal").innerHTML = "£"+y.currentAccountDto.currentAccountBalance;
-    document.getElementById("currentaccountnum").innerHTML = y.currentAccountDto.currentAccountNumber;
-    document.getElementById("currentaccountcode").innerHTML = y.currentAccountDto.currentAccountSortCode;
-    document.getElementById("savingsaccountbal").innerHTML = "£"+y.savingsAccountDto.savingsAccountBalance;
-    document.getElementById("savingsaccountnum").innerHTML = y.savingsAccountDto.savingsAccountNumber;
-    document.getElementById("savingsaccountcode").innerHTML = y.savingsAccountDto.savingsAccountSortCode;
-    document.getElementById("fullname").innerHTML = y.customerName;
-    document.getElementById("telnum").innerHTML = y.customerPhoneNumber;
-    document.getElementById("address").innerHTML = y.customerResidentialAddress;
-    document.getElementById("occupation").innerHTML = y.customerOccupation;
-    document.getElementById("email").innerHTML = y.customerEmail;
-    })
-    .catch((err) => alert("Unable to get the data from API", err));
-
+      //GET CALL
+      const options = { method: "GET" };
+      //Update the URL with the get details URL
+      fetch(
+        "http://18.207.173.95:8080/bank/" +
+          localStorage.getItem("customerName"),
+        options
+      )
+        .then((response) => response.json())
+        .then((y) => {
+          console.log(y);
+          //update y.title to a parameter from the real URL
+          document.getElementById("loginname").innerHTML = y.customerName;
+          document.getElementById("currentaccountbal").innerHTML =
+            "£" + y.currentAccountDto.currentAccountBalance;
+          document.getElementById("currentaccountnum").innerHTML =
+            y.currentAccountDto.currentAccountNumber;
+          document.getElementById("currentaccountcode").innerHTML =
+            y.currentAccountDto.currentAccountSortCode;
+          document.getElementById("savingsaccountbal").innerHTML =
+            "£" + y.savingsAccountDto.savingsAccountBalance;
+          document.getElementById("savingsaccountnum").innerHTML =
+            y.savingsAccountDto.savingsAccountNumber;
+          document.getElementById("savingsaccountcode").innerHTML =
+            y.savingsAccountDto.savingsAccountSortCode;
+          document.getElementById("fullname").innerHTML = y.customerName;
+          document.getElementById("telnum").innerHTML = y.customerPhoneNumber;
+          document.getElementById("address").innerHTML =
+            y.customerResidentialAddress;
+          document.getElementById("occupation").innerHTML =
+            y.customerOccupation;
+          document.getElementById("email").innerHTML = y.customerEmail;
+        })
+        .catch((err) => alert("Unable to get the data from API", err));
     </script>
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-eec3"><div class="u-container-style u-custom-color-1 u-expanded-width u-group u-shape-rectangle u-group-1">
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": ""
+      }
+    </script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="Home" />
+    <meta property="og:type" content="website" />
+    <meta data-intl-tel-input-cdn-path="intlTelInput/" />
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en">
+    <header class="u-clearfix u-header u-header" id="sec-eec3">
+      <div
+        class="u-container-style u-custom-color-1 u-expanded-width u-group u-shape-rectangle u-group-1"
+      >
         <div class="u-container-layout u-container-layout-1">
-          <img class="u-image u-image-contain u-image-default u-image-1" src="images/CapgeminiBank.png" alt="" data-image-width="514" data-image-height="195">
-          <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-2" src="images/userIcon.png" alt="" data-image-width="76" data-image-height="76">
+          <img
+            class="u-image u-image-contain u-image-default u-image-1"
+            src="images/CapgeminiBank.png"
+            alt=""
+            data-image-width="514"
+            data-image-height="195"
+          />
+          <img
+            class="u-image u-image-contain u-image-default u-preserve-proportions u-image-2"
+            src="images/userIcon.png"
+            alt=""
+            data-image-width="76"
+            data-image-height="76"
+          />
           <h5 id="loginname" class="u-text u-text-body-color u-text-1">Name</h5>
         </div>
-      </div><div class="u-custom-color-2 u-shape u-shape-rectangle u-shape-1"></div><h3 class="u-text u-text-2">Current Account Information</h3><div class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-2">
+      </div>
+      <div class="u-custom-color-2 u-shape u-shape-rectangle u-shape-1"></div>
+      <h3 class="u-text u-text-2">Current Account Information</h3>
+      <div
+        class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-2"
+      >
         <div class="u-container-layout u-container-layout-2">
-          <h5 id="currentaccountbal" class="u-custom-font u-text u-text-3">£90240.00</h5>
+          <h5 id="currentaccountbal" class="u-custom-font u-text u-text-3">
+            £90240.00
+          </h5>
           <h6 class="u-text u-text-4">Balance</h6>
         </div>
-      </div><div class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-2"></div><h6 class="u-text u-text-5">Account number </h6><h5 id="currentaccountnum" class="u-custom-font u-text u-text-6">12345678</h5><div class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-3"></div><h6 class="u-text u-text-7">Sort code</h6><h5 id="currentaccountcode" class="u-custom-font u-text u-text-8">00-00-00</h5><h3 class="u-text u-text-9">Saving Account Information</h3><div class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-3">
+      </div>
+      <div
+        class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-2"
+      ></div>
+      <h6 class="u-text u-text-5">Account number</h6>
+      <h5 id="currentaccountnum" class="u-custom-font u-text u-text-6">
+        12345678
+      </h5>
+      <div
+        class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-3"
+      ></div>
+      <h6 class="u-text u-text-7">Sort code</h6>
+      <h5 id="currentaccountcode" class="u-custom-font u-text u-text-8">
+        00-00-00
+      </h5>
+      <h3 class="u-text u-text-9">Saving Account Information</h3>
+      <div
+        class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-3"
+      >
         <div class="u-container-layout u-container-layout-3">
-          <h5 id="savingsaccountbal" class="u-custom-font u-text u-text-10">£706.75<br>
+          <h5
+            id="savingsaccountbal"
+            class="u-custom-font u-text u-text-10"
+            style="font-size: 3rem"
+          >
+            £706.75<br />
           </h5>
           <h6 class="u-text u-text-11">Balance</h6>
         </div>
-      </div><div class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-4"></div><h6 class="u-text u-text-12">Sort code</h6><h5 id="savingsaccountcode" class="u-custom-font u-text u-text-13">99-99-99</h5><div class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-5"></div><h6 class="u-text u-text-14">Saving&nbsp;Account number </h6><h5 id="savingsaccountnum" class="u-custom-font u-text u-text-15">23456790</h5><h3 class="u-text u-text-16">Personal Details</h3><div class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-4">
+      </div>
+      <div
+        class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-4"
+      ></div>
+      <h6 class="u-text u-text-12">Sort code</h6>
+      <h5 id="savingsaccountcode" class="u-custom-font u-text u-text-13">
+        99-99-99
+      </h5>
+      <div
+        class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-5"
+      ></div>
+      <h6 class="u-text u-text-14">Saving&nbsp;Account number</h6>
+      <h5 id="savingsaccountnum" class="u-custom-font u-text u-text-15">
+        23456790
+      </h5>
+      <h3 class="u-text u-text-16">Personal Details</h3>
+      <div
+        class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-4"
+      >
         <div class="u-container-layout u-container-layout-4">
           <h6 class="u-text u-text-17">Full name:</h6>
-          <h5 id="fullname" class="u-custom-font u-text u-text-18">First name Last name<br>
+          <h5 id="fullname" class="u-custom-font u-text u-text-18">
+            First name Last name<br />
           </h5>
         </div>
-      </div><div class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-6"></div><h6 class="u-text u-text-19">Telephone number</h6><h5 id="telnum" class="u-custom-font u-text u-text-20">+44 7249 985252</h5><div class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-5">
+      </div>
+      <div
+        class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-6"
+      ></div>
+      <h6 class="u-text u-text-19">Telephone number</h6>
+      <h5 id="telnum" class="u-custom-font u-text u-text-20">
+        +44 7249 985252
+      </h5>
+      <div
+        class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-5"
+      >
         <div class="u-container-layout u-container-layout-5">
           <h6 class="u-text u-text-21">Address</h6>
-          <h5 id="address" class="u-custom-font u-text u-text-22">Flat 5b<br>32 street road<br>Bromley&nbsp;<br>London<br>Uninted Kingdom
+          <h5 id="address" class="u-custom-font u-text u-text-22">
+            Flat 5b<br />32 street road<br />Bromley&nbsp;<br />London<br />Uninted
+            Kingdom
           </h5>
         </div>
-      </div><div class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-7"></div><h6 class="u-text u-text-23">Occupation</h6><h5 id="occupation" class="u-custom-font u-text u-text-24">Criminal Lawyer</h5><div class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-6">
+      </div>
+      <div
+        class="u-custom-color-3 u-radius-10 u-shape u-shape-round u-shape-7"
+      ></div>
+      <h6 class="u-text u-text-23">Occupation</h6>
+      <h5
+        id="occupation"
+        class="u-custom-font u-text u-text-24"
+        style="font-size: 1.5rem"
+      >
+        Criminal Lawyer
+      </h5>
+      <div
+        class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-6"
+      >
         <div class="u-container-layout u-container-layout-6">
           <h6 class="u-text u-text-25">Email</h6>
-          <h5 id="email" class="u-custom-font u-text u-text-26">someone@gmail.com<br>
+          <h5 id="email" class="u-custom-font u-text u-text-26">
+            someone@gmail.com<br />
           </h5>
         </div>
-      </div></header> 
-    
-    
-    
-    
+      </div>
+    </header>
+
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+      <a
+        class="u-link"
+        href="https://nicepage.com/website-templates"
+        target="_blank"
+      >
         <span>Free Website Templates</span>
       </a>
       <p class="u-text">
         <span>created with</span>
       </p>
-      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
-        <span>HTML Builder</span>
-      </a>. 
+      <a
+        class="u-link"
+        href="https://nicepage.com/html-website-builder"
+        target="_blank"
+      >
+        <span>HTML Builder</span> </a
+      >.
     </section>
-  
-</body></html>
+  </body>
+</html>
